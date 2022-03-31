@@ -352,7 +352,7 @@ body {
 @media (max-width: 500px) {
   .select-date {
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 25px;
   }
 
   .dhx_calendar {
