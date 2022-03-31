@@ -358,4 +358,17 @@ body {
   .dhx_calendar {
     width: 100% !important;
   }
+
+  .schedule-description,
+  .schedule-calender {
+    padding: 0 0;
+  }
+
+  .time-week {
+    column-gap: 25px;
+  }
+
+  .schedule-title {
+    width: 70px;
+  }
 }
