@@ -74,6 +74,7 @@ body {
 .schedule-link {
   color: #00adee;
   text-decoration: none;
+  display: block;
 }
 
 .schedule-service-title {
@@ -340,10 +341,10 @@ body {
   .schedule-description {
     order: 2;
     margin-top: 35px;
+    border-right: 0;
   }
 
   .schedule-calender {
-    border-left: 0;
     width: 100%;
   }
 }
