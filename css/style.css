@@ -386,7 +386,7 @@ body {
 }
 
 .schedule-info-data {
-  padding: 5px;
+  padding: 8px;
   border-top: 2px solid #004dff;
   border-radius: 8px;
   margin-top: 25px;
@@ -443,6 +443,16 @@ body {
 
 .iti {
   display: block;
+}
+
+.iti__flag {
+  background-image: url('path/to/flags.png');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url('path/to/flags@2x.png');
+  }
 }
 
 .input-checkbox {

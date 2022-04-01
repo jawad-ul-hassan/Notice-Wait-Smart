@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="schedule-service">
-            <h2 class="schedule-service-title">Schedule a Service</h2>
+            <h2 class="schedule-service-title">Confirm and Schedule</h2>
             <form class="schedule-form">
               <div class="form-field">
                 <label for="name" class="input-label">Full Name</label>
@@ -59,7 +59,13 @@
               </div>
               <div class="form-field">
                 <label for="phone" class="input-label">Mobile Number</label>
-                <input type="tel" id="phone" class="input-text" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  class="input-text"
+                  required
+                  placeholder="+1-202-555-0189"
+                />
               </div>
               <div class="form-field">
                 <label for="note" class="input-label">Note</label>
@@ -159,9 +165,6 @@
         errorMsg.classList.add('hide');
         validMsg.classList.add('hide');
       };
-      $(document).ready(function () {
-        $('#phone').val('+1-202-555-0189');
-      });
     </script>
   </body>
 </html>
