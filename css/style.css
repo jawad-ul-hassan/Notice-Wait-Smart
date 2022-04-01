@@ -532,7 +532,7 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  left: 48%;
+  left: 50%;
   transform: translateX(-50%);
   width: 1px;
   background-color: #dddddd;
@@ -542,7 +542,6 @@ body {
 .customer-status-data {
   border-bottom: 1px solid #dddddd;
   display: flex;
-  padding: 8px;
 }
 
 .customer-status-data:last-child {
@@ -552,6 +551,7 @@ body {
 .customer-status-title,
 .customer-status-desc {
   width: 50%;
+  padding: 8px;
 }
 
 .customer-status-title {
