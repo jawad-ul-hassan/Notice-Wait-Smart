@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <title>Notice | wait smart® | Notice - wait smart - Scheduling</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.2/build/js/intlTelInput.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.2/build/css/intlTelInput.css"
+    />
+    <!-- Font Awesome Link -->
+    <script
+      src="https://kit.fontawesome.com/6255250c8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="schedule-container">
+      <section class="schedule-customer">
+        <div class="schedule-logo">
+          <img src="./images/download.png" alt="Notice - Wait Time" />
+        </div>
+        <div class="schedule-customer-flex">
+          <div class="schedule-info">
+            <div class="schedule-info-data">
+              <div class="schedule-info-item">
+                <span class="schedule-info-title">Date:</span>
+                <span class="schedule-info-text">Wednesday April 06, 2022</span>
+              </div>
+              <div class="schedule-info-item">
+                <span class="schedule-info-title">Time:</span>
+                <span class="schedule-info-text">01:00 AM - 01:15 AM</span>
+              </div>
+              <div class="schedule-info-item">
+                <span class="schedule-info-title">Service Type:</span>
+                <span class="schedule-info-text">Intro Call</span>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-service">
+            <h2 class="schedule-service-title">Schedule a Service</h2>
+            <form class="schedule-form">
+              <div class="form-field">
+                <label for="name" class="input-label">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="John Doe"
+                  class="input-text"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="phone" class="input-label">Mobile Number</label>
+                <input type="tel" id="phone" class="input-text" required />
+              </div>
+              <div class="form-field">
+                <label for="note" class="input-label">Note</label>
+                <textarea
+                  name="note"
+                  id="note"
+                  placeholder="Write Note Here"
+                  class="input-text"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-field">
+                <input
+                  class="input-checkbox"
+                  type="checkbox"
+                  name="tos"
+                  id="tos"
+                />
+                <label class="checkbox-label" for="tos"
+                  >I agree to the
+                  <a href="#" class="tos-link">Terms of Service</a></label
+                >
+              </div>
+              <button type="submit" class="btn-submit">Schedule</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Script -->
+    <script>
+      var input = document.querySelector('#phone');
+      var errorMap = [
+        'Invalid number',
+        'Invalid country code',
+        'Too short',
+        'Too long',
+        'Invalid number',
+      ];
+      window.addEventListener('load', function () {
+        (errorMsg = document.querySelector('#error-msg')),
+          (validMsg = document.querySelector('#valid-msg'));
+        var iti = window.intlTelInput(input, {
+          utilsScript:
+            'https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.2/build/js/utils.js',
+        });
+        window.intlTelInput(input, {
+          // allowDropdown: false,
+          // autoHideDialCode: false,
+          // autoPlaceholder: "off",
+          // dropdownContainer: document.body,
+          // excludeCountries: ["us"],
+          // formatOnDisplay: false,
+          geoIpLookup: function (callback) {
+            $.get('https://ipinfo.io', function () {}, 'jsonp').always(
+              function (resp) {
+                var countryCode = resp && resp.country ? resp.country : '';
+                callback(countryCode);
+              }
+            );
+          },
+          // hiddenInput: "full_number",
+          initialCountry: 'auto',
+
+          // localizedCountries: { 'de': 'Deutschland' },
+          //nationalMode: false,
+          // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+          placeholderNumberType: 'MOBILE',
+          // preferredCountries: ['cn', 'jp'],
+          // separateDialCode: true,
+          utilsScript:
+            'https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.2/build/js/utils.js',
+        });
+        $(validMsg).addClass('hide');
+        input.addEventListener('blur', function () {
+          reset();
+          if (input.value.trim()) {
+            if (iti.isValidNumber()) {
+              validMsg.classList.remove('hide');
+            } else {
+              input.classList.add('error');
+              var errorCode = iti.getValidationError();
+              errorMsg.innerHTML = errorMap[errorCode];
+              errorMsg.classList.remove('hide');
+            }
+          }
+        });
+
+        input.addEventListener('change', reset);
+        input.addEventListener('keyup', reset);
+      });
+
+      var reset = function () {
+        input.classList.remove('error');
+        errorMsg.innerHTML = '';
+        errorMsg.classList.add('hide');
+        validMsg.classList.add('hide');
+      };
+      $(document).ready(function () {
+        $('#phone').val('+1-202-555-0189');
+      });
+    </script>
+  </body>
+</html>
