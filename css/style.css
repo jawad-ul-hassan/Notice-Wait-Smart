@@ -201,10 +201,23 @@ body {
   border-bottom: 1px solid #dddddd;
   background-color: #ffffff;
   opacity: 1;
+  color: #004dff;
+}
+
+.service-type-title,
+.service-time-price,
+.service-time-title {
+  color: #212529;
 }
 
 .select .selectDropdown .option:hover {
   background: #004dff;
+  color: #ffffff;
+}
+
+.select .selectDropdown .option:hover .service-type-title,
+.select .selectDropdown .option:hover .service-time-price,
+.select .selectDropdown .option:hover .service-time-title {
   color: #ffffff;
 }
 
