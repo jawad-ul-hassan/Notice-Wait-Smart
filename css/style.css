@@ -492,6 +492,109 @@ body {
   cursor: pointer;
 }
 
+/* -------------------Confirmation-Page------------------- */
+.customer-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.customer {
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
+    rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  padding: 25px;
+  margin: 30px 0;
+  border-radius: 8px;
+}
+
+.customer-img {
+  margin-bottom: 15px;
+}
+
+.customer-img > img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin: 0 auto;
+}
+
+.customer-status-table {
+  border: 1px solid #dddddd;
+  margin-top: 15px;
+  position: relative;
+}
+
+.customer-status-table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: #dddddd;
+  height: 100%;
+}
+
+.customer-status-data {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  padding: 8px;
+}
+
+.customer-status-data:last-child {
+  border-bottom: 0;
+}
+
+.customer-status-title,
+.customer-status-desc {
+  width: 50%;
+}
+
+.customer-status-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.customer-services-btn {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.btn-services {
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 25px;
+  flex: 1 1 33.333%;
+  padding: 10px;
+  font-family: inherit;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #004dff;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.btn-services:nth-child(2),
+.btn-services:nth-child(4) {
+  margin-right: 0;
+}
+
+.btn-services-app {
+  background-color: #c92626;
+}
+
+.btn-services-arr {
+  background-color: #257025;
+}
+
 /* Media Queries */
 
 @media (max-width: 1050px) {
@@ -534,6 +637,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .customer {
+    padding: 15px;
+  }
+}
+
 @media (max-width: 500px) {
   .select-date {
     flex-direction: column;
@@ -559,5 +668,15 @@ body {
   .schedule-info,
   .schedule-service {
     padding: 0 0;
+  }
+
+  .btn-services {
+    width: 100%;
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+
+  .customer {
+    padding: 15px 5px;
   }
 }
