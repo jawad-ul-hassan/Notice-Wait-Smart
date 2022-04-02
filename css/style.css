@@ -224,6 +224,16 @@ body {
 .service-time-price,
 .service-time-title {
   color: #212529;
+  user-select: none;
+  pointer-events: none;
+}
+
+.service-type-text,
+.service-time-text,
+.service-time-text {
+  color: #004dff;
+  user-select: none;
+  pointer-events: none;
 }
 
 .select .selectDropdown .option:hover {
@@ -234,6 +244,12 @@ body {
 .select .selectDropdown .option:hover .service-type-title,
 .select .selectDropdown .option:hover .service-time-price,
 .select .selectDropdown .option:hover .service-time-title {
+  color: #ffffff;
+}
+
+.select .selectDropdown .option:hover .service-type-text,
+.select .selectDropdown .option:hover .service-time-text,
+.select .selectDropdown .option:hover .service-time-text {
   color: #ffffff;
 }
 
@@ -388,7 +404,6 @@ body {
 .footer-text {
   font-size: 28px;
   font-weight: 800;
-  text-transform: capitalize;
 }
 
 .footer-text-sp {

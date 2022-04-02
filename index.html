@@ -129,35 +129,35 @@
                   Select a Service Type
                 </div>
                 <div class="selectDropdown">
-                  <div class="option" data-type="firstOption">
-                    <span class="service-type-title">Service Type:</span> Intro
-                    Call
-                    <br />
-                    <span class="service-time-title"
-                      >Avg Performance Time:</span
-                    >
-                    15 minutes
-                  </div>
                   <div class="option" data-type="secondOption">
-                    <span class="service-type-title">Service Type:</span> Intro
-                    Call
+                    <span class="service-type-title">Service Type:</span>
+                    <span class="service-type-text">Intro Call</span>
                     <br />
                     <span class="service-time-title"
                       >Avg Performance Time:</span
                     >
-                    15 minutes
+                    <span class="service-time-text">15 minutes</span>
                   </div>
                   <div class="option" data-type="thirdOption">
-                    <span class="service-type-title">Service Type:</span> Intro
-                    Call
+                    <span class="service-type-title">Service Type:</span>
+                    <span class="service-type-text">Intro Call</span>
                     <br />
                     <span class="service-time-title"
                       >Avg Performance Time:</span
                     >
-                    15 minutes
+                    <span class="service-time-text">15 minutes</span>
+                  </div>
+                  <div class="option" data-type="fourthOption">
+                    <span class="service-type-title">Service Type:</span>
+                    <span class="service-type-text">Intro Call</span>
+                    <br />
+                    <span class="service-time-title"
+                      >Avg Performance Time:</span
+                    >
+                    <span class="service-time-text">15 minutes</span>
                     <br />
                     <span class="service-time-price">Price:</span>
-                    $60
+                    <span class="service-time-text">$60</span>
                   </div>
                 </div>
               </div>
@@ -251,7 +251,8 @@
 
           parent.setAttribute('data-type', b.target.getAttribute('data-type'));
 
-          parent.innerText = b.target.innerText;
+          parent.innerHTML = b.target.innerHTML;
+          console.log(b.target.innerHTML);
         });
       });
     </script>
@@ -259,15 +260,16 @@
       // creating dhtmlxCalendar
       var calendar = new dhx.Calendar('calendar_container', {
         value: new Date(),
+        dateFormat: '%m/%d/%Y',
       });
       var date1 = calendar.getValue();
       const todayDate = document.querySelector('.today-date');
       todayDate.innerHTML = date1;
 
       calendar.events.on('change', date => {
-        todayDate.innerHTML = date.toLocaleDateString('en-GB', {
-          year: '2-digit',
+        todayDate.innerHTML = date.toLocaleDateString('en-US', {
           month: '2-digit',
+          year: 'numeric',
           day: '2-digit',
         });
       });
