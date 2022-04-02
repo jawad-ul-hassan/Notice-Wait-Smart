@@ -241,8 +241,7 @@ body {
   display: flex;
 }
 
-.days,
-.hours {
+.days {
   margin-right: 50px;
 }
 
