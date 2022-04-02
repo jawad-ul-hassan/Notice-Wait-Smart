@@ -165,7 +165,9 @@
 
             <div class="select-date">
               <div class="select-calender">
-                <div class="scheduled-field-title">2. Select a Day</div>
+                <div class="scheduled-field-title">
+                  2. Select a Day - <span class="today-date"></span>
+                </div>
                 <div id="calendar_container"></div>
               </div>
               <div class="select-time">
@@ -173,7 +175,7 @@
                 <div id="available-times-div">
                   <div class="time-slot">
                     <button class="time-btn">9:00am</button>
-                    <button class="confirm-btn active">Confirm</button>
+                    <button class="confirm-btn">Confirm</button>
                   </div>
                   <div class="time-slot">
                     <button class="time-btn">10:00am</button>
@@ -213,8 +215,20 @@
           </div>
         </div>
       </section>
-      <a href="/schedule.html">2nd Page</a>
-      <a href="/confirmation.html">3rd Page</a>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="schedule-container">
+          <div class="footer-content">
+            <span class="footer-text"
+              >Powered <span class="footer-text-sp">by</span></span
+            >
+            <a href="https://waitsmart.com/" class="footer-logo-link">
+              <img src="./images/notice-logo-footer.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- Script -->
@@ -243,16 +257,34 @@
     </script>
     <script>
       // creating dhtmlxCalendar
-      var calendar = new dhx.Calendar('calendar_container');
+      var calendar = new dhx.Calendar('calendar_container', {
+        value: new Date(),
+      });
+      var date1 = calendar.getValue();
+      const todayDate = document.querySelector('.today-date');
+      todayDate.innerHTML = date1;
+
+      calendar.events.on('change', date => {
+        todayDate.innerHTML = date.toLocaleDateString('en-GB', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+        });
+      });
     </script>
 
     <script>
-      const timeWeek = document.querySelector('.time-week');
-      const scheduleDescBtn = document.querySelector('.schedule-desc-btn');
+      const timeBtn = document.querySelectorAll('.time-btn');
+      const confirmBtn = document.querySelectorAll('.confirm-btn');
 
-      scheduleDescBtn.addEventListener('click', () => {
-        timeWeek.classList.toggle('active');
-      });
+      for (let i = 0; i < timeBtn.length; i++) {
+        timeBtn[i].addEventListener('click', () => {
+          for (let j = 0; j < confirmBtn.length; j++) {
+            confirmBtn[j].classList.remove('active');
+          }
+          timeBtn[i].nextElementSibling.classList.add('active');
+        });
+      }
     </script>
   </body>
 </html>

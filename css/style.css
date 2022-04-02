@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 *,
 *::before,
@@ -23,13 +23,13 @@ body {
   max-width: 1160px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 /* Schedule Section */
 .schedule {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   padding: 15px;
   margin: 30px 0;
   border-radius: 8px;
@@ -263,6 +263,10 @@ body {
   width: 100% !important;
 }
 
+.today-date {
+  color: #004dff;
+}
+
 .select-date {
   display: flex;
   justify-content: space-between;
@@ -357,10 +361,36 @@ body {
   opacity: 0.8;
 }
 
+/* Footer */
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.footer-text {
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.footer-text-sp {
+  color: #004dff;
+}
+
+.footer-logo-link > img {
+  display: inline-block;
+  width: 180px;
+  margin-left: 8px;
+  object-fit: cover;
+}
+
 /*------------------ Schedule-Customer-Page ------------------*/
 .schedule-customer {
-  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
-    rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   padding: 15px;
   margin: 30px 0;
   border-radius: 8px;
@@ -497,34 +527,20 @@ body {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .customer {
-  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
-    rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   padding: 25px;
   margin: 30px 0;
   border-radius: 8px;
 }
 
-.customer-img {
-  margin-bottom: 15px;
-}
-
-.customer-img > img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  margin: 0 auto;
-}
-
 .customer-status-table {
   border: 1px solid #dddddd;
-  margin-top: 15px;
+  margin-top: 25px;
   position: relative;
 }
 
@@ -613,8 +629,7 @@ body {
   }
 
   .schedule-description {
-    order: 2;
-    margin-top: 35px;
+    margin-bottom: 35px;
     border-right: 0;
   }
 
@@ -678,5 +693,14 @@ body {
 
   .customer {
     padding: 15px 5px;
+  }
+
+  .footer-text {
+    font-size: 24px;
+  }
+
+  .footer-logo-link > img {
+    width: 150px;
+    margin-left: 6px;
   }
 }
