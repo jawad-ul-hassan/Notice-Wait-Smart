@@ -159,7 +159,7 @@ body {
 .select .selectBtn {
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
   cursor: pointer;
   position: relative;
@@ -187,7 +187,7 @@ body {
 }
 
 .select .selectBtn.toggle {
-  border-radius: 3px 3px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .select .selectBtn.toggle:after {
@@ -199,7 +199,7 @@ body {
   position: absolute;
   top: 100%;
   width: 100%;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 5px 5px;
   overflow: hidden;
   background: #fff;
   -webkit-transform: scale(1, 0);
@@ -279,8 +279,9 @@ body {
 }
 
 .dhx_calendar {
-  border: 1px solid #dddddd;
+  border: 1px solid #eeeeee;
   width: 100% !important;
+  border-radius: 5px;
 }
 
 .today-date {
@@ -324,7 +325,7 @@ body {
 .time-btn {
   font-family: inherit;
   flex: 1;
-  border: 1px solid #dddddd;
+  border: 1px solid #eeeeee;
   color: #004dff;
   background-color: #ffffff;
   width: 100%;
