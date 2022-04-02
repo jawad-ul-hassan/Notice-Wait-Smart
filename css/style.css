@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../gilroy/Gilroy-Medium.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../gilroy/Gilroy-SemiBold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../gilroy/Gilroy-Bold.ttf');
+  font-weight: 800;
+}
 
 *,
 *::before,
@@ -9,7 +25,7 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
