@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <title>Notice | wait smart® | Notice - wait smart - Scheduling</title>
+
+    <!-- Font Awesome Link -->
+    <script
+      src="https://kit.fontawesome.com/6255250c8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="customer-container">
+      <section class="customer">
+        <div class="schedule-logo">
+          <img src="./images/download.png" alt="Notice - Wait Time" />
+        </div>
+        <h2 class="schedule-service-title">Appointment Confirmed</h2>
+        <div class="customer-status-table">
+          <div class="customer-status-data">
+            <div class="customer-status-title">Current Status</div>
+            <div class="customer-status-desc">Confirmed</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Confirmation Number</div>
+            <div class="customer-status-desc">732682</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Date</div>
+            <div class="customer-status-desc">03-25-2022</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Time</div>
+            <div class="customer-status-desc">09:00 PM - 09:45 PM</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Service Type</div>
+            <div class="customer-status-desc">Follow-up</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Customer Name</div>
+            <div class="customer-status-desc">Abel Meri</div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Mobile Number</div>
+            <div class="customer-status-desc">
+              <a href="tel:5714368124" class="schedule-link">5714368124</a>
+            </div>
+          </div>
+          <div class="customer-status-data">
+            <div class="customer-status-title">Note</div>
+            <div id="view-notes" class="customer-status-desc">View Note</div>
+          </div>
+        </div>
+        <div class="customer-services-btn">
+          <button class="btn-services btn-services-add">Add Notes</button>
+          <button class="btn-services btn-services-start">
+            Start Appointment
+          </button>
+          <button class="btn-services btn-services-completed">Completed</button>
+          <button class="btn-services btn-services-no-show">No Show</button>
+          <button class="btn-services btn-services-cancel">
+            Cancel Appointment
+          </button>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="customer-container">
+          <div class="footer-content">
+            <span class="footer-text"
+              >Powered <span class="footer-text-sp">by</span></span
+            >
+            <a href="https://waitsmart.com/" class="footer-logo-link">
+              <img src="./images/notice-logo-footer.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- View-Note-Modal -->
+    <!-- The Modal -->
+    <div id="view-note-modal" class="view-modal">
+      <div class="view-modal-container">
+        <!-- Modal content -->
+        <div class="view-modal-content">
+          <div class="view-modal-header">
+            <h2 class="view-modal-title">View Note</h2>
+            <span id="close-view-modal" class="view-modal-close"
+              ><i class="fas fa-times"></i
+            ></span>
+          </div>
+          <div class="view-modal-body">
+            <div class="view-modal-data">
+              <div class="view-modal-data-title">Appointment created on:</div>
+              <div class="view-modal-data-text">2022-03-29 04:15 AM</div>
+            </div>
+            <div class="view-modal-data">
+              <div class="view-modal-data-title">Customer arrived on:</div>
+              <div class="view-modal-data-text"></div>
+            </div>
+            <div class="view-modal-data">
+              <div class="view-modal-data-title">Service started on:</div>
+              <div class="view-modal-data-text"></div>
+            </div>
+            <div class="view-modal-data">
+              <div class="view-modal-data-title">Service completed on:</div>
+              <div class="view-modal-data-text"></div>
+            </div>
+            <div class="view-modal-data">
+              <div class="view-modal-data-title">Service cancelled on:</div>
+              <div class="view-modal-data-text"></div>
+            </div>
+          </div>
+          <div class="view-modal-footer">
+            <button class="btn-add-notes">Add Notes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      // Get the modal
+      var modal = document.getElementById('view-note-modal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById('view-notes');
+
+      // Get the <span> element that closes the modal
+      var closeBtn = document.getElementById('close-view-modal');
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = 'block';
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      closeBtn.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+  </body>
+</html>

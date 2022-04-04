@@ -639,6 +639,134 @@ body {
   background-color: #257025;
 }
 
+/* Confirmation Copy Page */
+.btn-services-add {
+  background-color: #00a2ff;
+}
+
+.btn-services-start {
+  background-color: #35b2d6;
+}
+
+.btn-services-completed {
+  background-color: #257025;
+}
+
+.btn-services-no-show {
+  background-color: #cacaca;
+}
+
+.btn-services-cancel {
+  background-color: #c92626;
+  margin-right: 0;
+}
+
+/* --------------View-Modal------------- */
+.view-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 30px;
+}
+
+.view-modal-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+#view-notes {
+  cursor: pointer;
+}
+
+.view-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.view-modal-header {
+  background-color: #00a2ff;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.view-modal-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.view-modal-close {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.view-modal-body {
+  padding: 25px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.view-modal-data {
+  display: flex;
+  margin-bottom: 2.5px;
+}
+
+.view-modal-data-title {
+  width: 200px;
+}
+
+.view-modal-data-text {
+  flex: 1;
+}
+
+.view-modal-footer {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-add-notes {
+  display: inline-block;
+  padding: 10px;
+  font-family: inherit;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #00a2ff;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 /* Media Queries */
 
 @media (max-width: 1050px) {
@@ -730,5 +858,13 @@ body {
   .footer-logo-link > img {
     width: 150px;
     margin-left: 6px;
+  }
+
+  .view-modal-body {
+    padding: 25px 15px;
+  }
+
+  .view-modal-data-title {
+    width: 180px;
   }
 }
