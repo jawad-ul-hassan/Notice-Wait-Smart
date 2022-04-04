@@ -131,7 +131,7 @@ body {
 
 .schedule-socials-link > img {
   display: block;
-  width: 32px;
+  width: 25px;
   object-fit: cover;
   transition: 300ms ease-in;
 }
