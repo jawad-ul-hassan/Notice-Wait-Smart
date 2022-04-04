@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>Notice | wait smart® | Notice - wait smart - Scheduling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Calender -->
     <script type="text/javascript" src="../../codebase/calendar.js"></script>
     <link rel="stylesheet" href="../../codebase/calendar.css" />
@@ -184,44 +185,64 @@
                 <div class="scheduled-field-title">3. Select a Time</div>
                 <div id="available-times-div">
                   <div class="time-slot">
-                    <button class="time-btn">9:00am</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time1">
+                      <input type="radio" name="time" id="time1" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">10:00am</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time2">
+                      <input type="radio" name="time" id="time2" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">11:00am</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time3">
+                      <input type="radio" name="time" id="time3" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">2:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time4">
+                      <input type="radio" name="time" id="time4" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">3:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time5">
+                      <input type="radio" name="time" id="time5" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">4:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time6">
+                      <input type="radio" name="time" id="time6" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">4:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time7">
+                      <input type="radio" name="time" id="time7" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">4:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time8">
+                      <input type="radio" name="time" id="time8" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                   <div class="time-slot">
-                    <button class="time-btn">4:00pm</button>
-                    <button class="confirm-btn">Confirm</button>
+                    <label for="time9">
+                      <input type="radio" name="time" id="time9" />
+                      <span class="time-check">10:00 am</span>
+                    </label>
                   </div>
                 </div>
               </div>
             </div>
+
+            <button class="btn-next">Next</button>
           </div>
         </div>
       </section>
@@ -242,6 +263,8 @@
     </div>
 
     <!-- Script -->
+
+    <!-- Select Options -->
     <script>
       const select = document.querySelectorAll('.selectBtn');
       const option = document.querySelectorAll('.option');
@@ -285,18 +308,12 @@
       });
     </script>
 
+    <!-- Time Label Highlight -->
     <script>
-      const timeBtn = document.querySelectorAll('.time-btn');
-      const confirmBtn = document.querySelectorAll('.confirm-btn');
-
-      for (let i = 0; i < timeBtn.length; i++) {
-        timeBtn[i].addEventListener('click', () => {
-          for (let j = 0; j < confirmBtn.length; j++) {
-            confirmBtn[j].classList.remove('active');
-          }
-          timeBtn[i].nextElementSibling.classList.add('active');
-        });
-      }
+      $('label').on('change', 'input:radio', function () {
+        $('label').removeClass('active');
+        $(this).closest('label').addClass('active');
+      });
     </script>
   </body>
 </html>

@@ -308,7 +308,7 @@ body {
 #available-times-div {
   height: 258px;
   overflow-y: auto;
-  padding: 0 5px;
+  padding: 0 8px;
 }
 
 #available-times-div::-webkit-scrollbar {
@@ -326,67 +326,44 @@ body {
 }
 
 .time-slot {
+  margin-bottom: 5px;
+}
+
+.time-slot > label {
   display: flex;
-}
-
-.time-btn {
-  font-family: inherit;
-  flex: 1;
-  border: 1px solid #eeeeee;
-  color: #004dff;
-  background-color: #ffffff;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  height: 40px;
-  cursor: pointer;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #dddddd;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.time-btn:hover {
-  border-width: 2px;
-  border-color: #004dff;
+.time-slot > label input[type='radio'] {
+  accent-color: #004dff;
 }
 
-.time-btn:focus {
-  background-color: #777777;
-  color: #ffffff;
-  outline: none;
-  border: none;
+.time-slot > label.active {
+  border: 1px solid #004dff;
 }
 
-.time-btn:focus:hover {
-  border: none;
-}
-
-.confirm-btn {
-  font-family: inherit;
+.time-check {
   flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-next {
+  display: block;
+  font-family: inherit;
+  margin-top: 25px;
   width: 100%;
-  margin-left: 5px;
+  padding: 8px;
+  border-radius: 5px;
   background-color: #004dff;
   color: #ffffff;
+  border: 0;
   font-size: 16px;
-  font-weight: 500;
-  border-radius: 5px;
-  border: none;
-  height: 40px;
   cursor: pointer;
-  display: none;
-}
-
-.confirm-btn.active {
-  display: block;
-}
-
-.confirm-btn:hover {
-  opacity: 0.8;
-}
-
-.confirm-btn:focus {
-  outline: 0;
-  opacity: 0.8;
 }
 
 /* Footer */
