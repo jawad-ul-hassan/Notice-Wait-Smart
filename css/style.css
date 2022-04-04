@@ -346,6 +346,10 @@ body {
   border: 1px solid #004dff;
 }
 
+.time-slot > label.active .time-check {
+  color: #004dff;
+}
+
 .time-check {
   flex: 1;
   display: flex;
