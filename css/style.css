@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../gilroy/Gilroy-Medium.ttf');
+  font-family: 'Proxima-Nova';
+  src: url('../Proxima-Nova-Font/ProximaNova-Regular.otf');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../gilroy/Gilroy-SemiBold.ttf');
+  font-family: 'Proxima-Nova';
+  src: url('../Proxima-Nova-Font/Proxima-Nova-Bold.otf');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../gilroy/Gilroy-Bold.ttf');
+  font-family: 'Proxima-Nova';
+  src: url('../Proxima-Nova-Font/Proxima-Nova-Black.otf');
   font-weight: 800;
 }
 
@@ -25,7 +25,7 @@
 }
 
 body {
-  font-family: 'Gilroy', sans-serif;
+  font-family: 'Proxima-Nova', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -53,13 +53,14 @@ body {
 
 .schedule-logo {
   text-align: center;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .schedule-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
 }
 
 .schedule-description,
@@ -124,13 +125,19 @@ body {
 }
 
 .schedule-socials-link {
-  display: inline-block;
-  color: #004dff;
+  display: block;
   margin-right: 15px;
 }
 
-.schedule-socials-link:hover {
-  color: #777777;
+.schedule-socials-link > img {
+  display: block;
+  width: 32px;
+  object-fit: cover;
+  transition: 300ms ease-in;
+}
+
+.schedule-socials-link > img:hover {
+  transform: translateY(-3px);
 }
 
 .select-field {
@@ -392,8 +399,8 @@ body {
 }
 
 .footer-text {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .footer-text-sp {
@@ -401,8 +408,8 @@ body {
 }
 
 .footer-logo-link > img {
-  display: inline-block;
-  width: 180px;
+  display: block;
+  width: 120px;
   margin-left: 8px;
   object-fit: cover;
 }
@@ -419,6 +426,7 @@ body {
 .schedule-customer-flex {
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 .schedule-info,
@@ -553,7 +561,7 @@ body {
 .customer {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  padding: 25px;
+  padding: 15px 25px;
   margin: 30px 0;
   border-radius: 8px;
 }
