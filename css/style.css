@@ -303,6 +303,11 @@ body {
 
 .select-time {
   width: 100%;
+  display: none;
+}
+
+.select-time.active {
+  display: block;
 }
 
 #available-times-div {
@@ -375,6 +380,14 @@ body {
   border: 0;
   font-size: 16px;
   cursor: pointer;
+}
+
+.dhx_calendar-day--selected:before {
+  background-color: #004dff;
+}
+
+.dhx_calendar-day--weekend {
+  color: #004dff;
 }
 
 /* Footer */
