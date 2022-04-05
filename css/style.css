@@ -821,7 +821,7 @@ body {
   }
 
   .schedule-title {
-    width: 100px;
+    width: 90px;
   }
 
   .schedule-info,
@@ -854,5 +854,15 @@ body {
 
   .view-modal-data-title {
     width: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .schedule-socials-link {
+    margin-right: 12px;
+  }
+
+  .schedule-socials-link:last-child {
+    margin-right: 0;
   }
 }
