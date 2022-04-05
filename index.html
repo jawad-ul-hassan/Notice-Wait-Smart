@@ -183,10 +183,10 @@
               </div>
               <div class="select-time">
                 <div class="scheduled-field-title">3. Select a Time</div>
-                <div id="available-times-div">
+                <div id="available-times-div" class="available active">
                   <div class="time-slot">
-                    <label for="time1" class="active">
-                      <input type="radio" name="time" id="time1" checked />
+                    <label for="time1">
+                      <input type="radio" name="time" id="time1" />
                       <span class="time-check">10:00 am</span>
                     </label>
                   </div>
@@ -268,6 +268,7 @@
     <script>
       const select = document.querySelectorAll('.selectBtn');
       const option = document.querySelectorAll('.option');
+      const availableTime = document.querySelector('.available');
       let index = 1;
 
       select.forEach(a => {
@@ -285,7 +286,7 @@
           parent.setAttribute('data-type', b.target.getAttribute('data-type'));
 
           parent.innerHTML = b.target.innerHTML;
-          console.log(b.target.innerHTML);
+          availableTime.classList.remove('active');
         });
       });
     </script>

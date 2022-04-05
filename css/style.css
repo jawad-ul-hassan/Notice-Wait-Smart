@@ -325,6 +325,13 @@ body {
   background-color: #004dff;
 }
 
+.available.active {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  user-select: none;
+}
+
 .time-slot {
   margin-bottom: 5px;
 }
